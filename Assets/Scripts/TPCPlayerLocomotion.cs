@@ -7,7 +7,12 @@ public class TPCPlayerLocomotion : MonoBehaviour
     Transform cameraObject;
     Rigidbody playerRigidBody;
 
-    public float movementSpeed = 5;
+    public bool isSprinting = false;
+
+    [Header("Movement Speeds")]
+    public float walkingSpeed = 2.5f;
+    public float runningSpeed = 5;
+    public float sprintingSpeed = 7;
     public float rotationSpeed = 10;
 
     private void Awake()
@@ -23,7 +28,24 @@ public class TPCPlayerLocomotion : MonoBehaviour
         moveDirection = moveDirection + cameraObject.right * inputManager.horizonalInput;
         moveDirection.Normalize();
         moveDirection.y = 0;
-        moveDirection = moveDirection * movementSpeed;
+
+        if(isSprinting)
+        {
+            moveDirection = moveDirection * sprintingSpeed;
+        }
+        else
+        {
+            if (inputManager.moveAmount >= 0.5f)
+            {
+                moveDirection = moveDirection * runningSpeed;
+            }
+            else
+            {
+                moveDirection = moveDirection * walkingSpeed;
+            }
+        }
+
+
 
         Vector3 movementVelocity = moveDirection;
         playerRigidBody.linearVelocity = movementVelocity;
