@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hallway_MAT
-    second: {fileID: 2100000, guid: 4f03985bdf24c794dab30b26c39954f4, type: 2}
+    second: {fileID: 2100000, guid: 2ce8a2692cbdc624fab4455c68fbb21a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
