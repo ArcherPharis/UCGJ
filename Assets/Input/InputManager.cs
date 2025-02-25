@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
     AnimationManager animationManager;
     CameraManager cameraManager;
     TPCPlayerLocomotion playerLocomotion;
+    Interactor interactor;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -18,12 +19,14 @@ public class InputManager : MonoBehaviour
     public float moveAmount;
 
     public bool shiftInput;
+    public bool interactInput;
 
     private void Awake()
     {
         animationManager = GetComponent<AnimationManager>();
         cameraManager = FindFirstObjectByType<CameraManager>();
         playerLocomotion = GetComponent<TPCPlayerLocomotion>();
+        interactor = GetComponent<Interactor>();
     }
     private void OnEnable()
     {
@@ -38,6 +41,10 @@ public class InputManager : MonoBehaviour
 
             TPCplayerControls.PlayerActions.Shift.performed += i => shiftInput = true;
             TPCplayerControls.PlayerActions.Shift.canceled += i => shiftInput = false;
+
+            TPCplayerControls.PlayerActions.Interact.performed += i => interactInput = true;
+            TPCplayerControls.PlayerActions.Interact.canceled += i => interactInput = false;
+
         }
         TPCplayerControls.Enable();
     }
@@ -55,6 +62,7 @@ public class InputManager : MonoBehaviour
     {
         HandleMovementInput();
         HandleSprintInput();
+        HandleInteractInput();
     }
 
     private void HandleMovementInput()
@@ -78,6 +86,18 @@ public class InputManager : MonoBehaviour
         else
         {
             playerLocomotion.isSprinting = false;
+        }
+    }
+
+    private void HandleInteractInput()
+    {
+        if(interactInput)
+        {
+            interactor.AttemptInteract();
+        }
+        else
+        {
+
         }
     }
 }
