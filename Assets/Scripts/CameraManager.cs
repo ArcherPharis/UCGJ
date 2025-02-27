@@ -14,6 +14,7 @@ public class CameraManager : MonoBehaviour
     //public float maximumHorizontalLook = 90;
     public float minimumVerticalLook = -35;
     public float maximumVerticalLook = 35;
+    public bool bShouldMoveCamera = true;
 
     InputManager inputManager;
 
@@ -29,6 +30,9 @@ public class CameraManager : MonoBehaviour
 
     private void RotateCamera()
     {
+        if (!bShouldMoveCamera)
+            return;
+
         lookAngle = lookAngle + (inputManager.cameraInputX * cameraLookSpeed);
         pivotAngle = pivotAngle - (inputManager.cameraInputY * cameraPivotSpeed);
         pivotAngle = Mathf.Clamp(pivotAngle, minimumVerticalLook, maximumVerticalLook);

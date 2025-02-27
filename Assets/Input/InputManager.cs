@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     CameraManager cameraManager;
     TPCPlayerLocomotion playerLocomotion;
     Interactor interactor;
+    Flashlight flashlight;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -20,6 +21,9 @@ public class InputManager : MonoBehaviour
 
     public bool shiftInput;
     public bool interactInput;
+    public bool flashlightInput = false;
+
+
 
     private void Awake()
     {
@@ -27,11 +31,13 @@ public class InputManager : MonoBehaviour
         cameraManager = FindFirstObjectByType<CameraManager>();
         playerLocomotion = GetComponent<TPCPlayerLocomotion>();
         interactor = GetComponent<Interactor>();
+        flashlight = GetComponent<Flashlight>();
     }
     private void OnEnable()
     {
         if(TPCplayerControls == null)
         {
+
             TPCplayerControls = new TPCPlayerControls();
             TPCplayerControls.PlayerMovement.Movement.performed += i 
                 => movementInput = i.ReadValue<Vector2>();
@@ -44,6 +50,9 @@ public class InputManager : MonoBehaviour
 
             TPCplayerControls.PlayerActions.Interact.performed += i => interactInput = true;
             TPCplayerControls.PlayerActions.Interact.canceled += i => interactInput = false;
+
+            TPCplayerControls.PlayerActions.Flashlight.performed += i => flashlightInput = true;
+            TPCplayerControls.PlayerActions.Flashlight.canceled += i => flashlightInput = false;
 
         }
         TPCplayerControls.Enable();
@@ -63,6 +72,7 @@ public class InputManager : MonoBehaviour
         HandleMovementInput();
         HandleSprintInput();
         HandleInteractInput();
+        HandleFlashlightInput();
     }
 
     private void HandleMovementInput()
@@ -94,6 +104,31 @@ public class InputManager : MonoBehaviour
         if(interactInput)
         {
             interactor.AttemptInteract();
+        }
+        else
+        {
+
+        }
+    }
+
+    public void DisablePlayerInput()
+    {
+        if(TPCplayerControls != null)
+        {
+
+            TPCplayerControls.Disable();
+            horizonalInput = 0;
+            verticalInput = 0;
+            movementInput = Vector2.zero;
+
+        }
+    }
+
+    private void HandleFlashlightInput()
+    {
+        if (flashlightInput)
+        {
+            flashlight.CastFlashlightRay();
         }
         else
         {

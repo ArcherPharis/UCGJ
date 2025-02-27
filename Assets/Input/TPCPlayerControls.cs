@@ -310,6 +310,15 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Flashlight"",
+                    ""type"": ""Button"",
+                    ""id"": ""10845f0c-e419-4718-b168-8fcd8cbb5259"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -356,6 +365,28 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42bb1dd5-a1f2-425c-8143-c482d412e655"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flashlight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9cfd3e75-a5fc-4086-a554-3798bb0a4d75"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flashlight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -370,6 +401,7 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Shift = m_PlayerActions.FindAction("Shift", throwIfNotFound: true);
         m_PlayerActions_Interact = m_PlayerActions.FindAction("Interact", throwIfNotFound: true);
+        m_PlayerActions_Flashlight = m_PlayerActions.FindAction("Flashlight", throwIfNotFound: true);
     }
 
     ~@TPCPlayerControls()
@@ -560,6 +592,7 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
     private readonly InputAction m_PlayerActions_Shift;
     private readonly InputAction m_PlayerActions_Interact;
+    private readonly InputAction m_PlayerActions_Flashlight;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerActions".
     /// </summary>
@@ -579,6 +612,10 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerActions/Interact".
         /// </summary>
         public InputAction @Interact => m_Wrapper.m_PlayerActions_Interact;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerActions/Flashlight".
+        /// </summary>
+        public InputAction @Flashlight => m_Wrapper.m_PlayerActions_Flashlight;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -611,6 +648,9 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Flashlight.started += instance.OnFlashlight;
+            @Flashlight.performed += instance.OnFlashlight;
+            @Flashlight.canceled += instance.OnFlashlight;
         }
 
         /// <summary>
@@ -628,6 +668,9 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Flashlight.started -= instance.OnFlashlight;
+            @Flashlight.performed -= instance.OnFlashlight;
+            @Flashlight.canceled -= instance.OnFlashlight;
         }
 
         /// <summary>
@@ -704,5 +747,12 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Flashlight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFlashlight(InputAction.CallbackContext context);
     }
 }
