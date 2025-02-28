@@ -448,17 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7199372486921231954, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b3f8324f9c31c274995f57e56baf0462, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4486345378335334034, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1691484112}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
 --- !u!1 &339623672 stripped
 GameObject:
@@ -1645,30 +1638,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1058130548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1691484102 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4486345378335334034, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-  m_PrefabInstance: {fileID: 276961569}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1691484111 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3821695669393212456, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-  m_PrefabInstance: {fileID: 276961569}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1691484112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691484102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190b742345eac3d43a093d0ed5d89c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Range: 100
-  FlashlightTransform: {fileID: 1691484111}
 --- !u!1001 &1831413944
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,23 +4,28 @@ using UnityEngine.InputSystem.XInput;
 public class CameraManager : MonoBehaviour
 {
     public Transform cameraPivot;
+    public Transform cameraTransform; // Reference to the actual camera
 
     public float cameraLookSpeed = 0.2f;
     public float cameraPivotSpeed = 0.2f;
 
-    public float lookAngle; //Up/Down
-    public float pivotAngle; //left/right
-    //public float minimumHorizontalLook = -90;
-    //public float maximumHorizontalLook = 90;
+    public float lookAngle; // Left/Right
+    public float pivotAngle; // Up/Down
     public float minimumVerticalLook = -35;
     public float maximumVerticalLook = 35;
     public bool bShouldMoveCamera = true;
+    public bool useCameraBoom = false; // Toggle for boom functionality
 
     InputManager inputManager;
 
     private void Awake()
     {
         inputManager = FindFirstObjectByType<InputManager>();
+
+        if (cameraTransform != null && cameraPivot != null)
+        {
+            cameraTransform.SetParent(cameraPivot); // Ensure the camera is a child of the pivot
+        }
     }
 
     public void HandleAllCameraMovement()
@@ -33,20 +38,24 @@ public class CameraManager : MonoBehaviour
         if (!bShouldMoveCamera)
             return;
 
-        lookAngle = lookAngle + (inputManager.cameraInputX * cameraLookSpeed);
-        pivotAngle = pivotAngle - (inputManager.cameraInputY * cameraPivotSpeed);
+        lookAngle += inputManager.cameraInputX * cameraLookSpeed;
+        pivotAngle -= inputManager.cameraInputY * cameraPivotSpeed;
         pivotAngle = Mathf.Clamp(pivotAngle, minimumVerticalLook, maximumVerticalLook);
-        //lookAngle = Mathf.Clamp(lookAngle, minimumHorizontalLook, maximumHorizontalLook);
 
+        if (useCameraBoom)
+        {
+            // Rotate the pivot itself, so the camera follows naturally
+            Quaternion pivotRotation = Quaternion.Euler(pivotAngle, lookAngle, 0);
+            cameraPivot.rotation = pivotRotation;
+        }
+        else
+        {
+            // Original behavior: Rotate the camera and pivot separately
+            Quaternion horizontalRotation = Quaternion.Euler(0, lookAngle, 0);
+            transform.rotation = horizontalRotation;
 
-        Vector3 rotation = Vector3.zero;
-        rotation.y = lookAngle;
-        Quaternion TargetRotation = Quaternion.Euler(rotation);
-        transform.rotation = TargetRotation;
-
-        rotation = Vector3.zero;
-        rotation.x = pivotAngle;
-        TargetRotation = Quaternion.Euler(rotation);
-        cameraPivot.localRotation = TargetRotation;
+            Quaternion verticalRotation = Quaternion.Euler(pivotAngle, 0, 0);
+            cameraPivot.localRotation = verticalRotation;
+        }
     }
 }

@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 120fd52e54e3ef3428dd606ab1d2f403, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1746095
+      value: 0.037
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 120fd52e54e3ef3428dd606ab1d2f403, type: 3}
       propertyPath: m_LocalRotation.w
@@ -81,6 +81,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 120fd52e54e3ef3428dd606ab1d2f403, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5625046626554133757}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 120fd52e54e3ef3428dd606ab1d2f403, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7364279255429305375}
   m_SourcePrefab: {fileID: 100100000, guid: 120fd52e54e3ef3428dd606ab1d2f403, type: 3}
 --- !u!4 &3821695669393212456 stripped
 Transform:
@@ -113,6 +116,7 @@ MonoBehaviour:
   moveAmount: 0
   shiftInput: 0
   interactInput: 0
+  flashlightInput: 0
 --- !u!114 &7262691309383821106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,3 +222,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractorOrigin: {fileID: 3821695669393212456}
   InteractRange: 100
+--- !u!114 &7364279255429305375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4486345378335334034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b742345eac3d43a093d0ed5d89c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 100
+  FlashlightTransform: {fileID: 3821695669393212456}
