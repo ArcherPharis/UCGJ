@@ -3,7 +3,12 @@ guid: bba97348deafa154eb7c0bbebce238e0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ramp_and_Marble_MAT
+    second: {fileID: 2100000, guid: cacd3981c88da324cba9b5063b959bef, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5e749460b71bfb43b5ddb6a5ecd3aaf
+guid: fa75cae61dc8e384fb0732210f430fd6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hallway_MAT
-    second: {fileID: 2100000, guid: 6d43ca746e48a0d47a912669a7621adf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hallway_MAT1
-    second: {fileID: 2100000, guid: 6d43ca746e48a0d47a912669a7621adf, type: 2}
+      name: Spikes_MAT
+    second: {fileID: 2100000, guid: 4f03985bdf24c794dab30b26c39954f4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

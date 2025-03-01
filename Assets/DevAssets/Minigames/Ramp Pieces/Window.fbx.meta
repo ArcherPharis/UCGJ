@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: CircularDoor_MAT
     second: {fileID: 2100000, guid: 3474f3f83d9ea9442a0f6a075d001801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CircularWindow_MAT
+    second: {fileID: 2100000, guid: 3474f3f83d9ea9442a0f6a075d001801, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
