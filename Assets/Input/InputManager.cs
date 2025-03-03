@@ -23,7 +23,11 @@ public class InputManager : MonoBehaviour
     public bool interactInput;
     public bool flashlightInput = false;
 
-
+    [Header("Normal Map Scrolling")]
+    [SerializeField] private Material material; // Assign the material in the inspector
+    [SerializeField] private float scrollRate = 0.1f; // Adjust scrolling speed
+    [SerializeField] private bool invertScroll = false; // Flip scroll direction
+    private Vector2 normalMapOffset; // Track the offset
 
     private void Awake()
     {
@@ -33,17 +37,14 @@ public class InputManager : MonoBehaviour
         interactor = GetComponent<Interactor>();
         flashlight = GetComponent<Flashlight>();
     }
+
     private void OnEnable()
     {
-        if(TPCplayerControls == null)
+        if (TPCplayerControls == null)
         {
-
             TPCplayerControls = new TPCPlayerControls();
-            TPCplayerControls.PlayerMovement.Movement.performed += i 
-                => movementInput = i.ReadValue<Vector2>();
-
-            TPCplayerControls.PlayerMovement.Camera.performed += i => 
-            cameraInput = i.ReadValue<Vector2>();
+            TPCplayerControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
+            TPCplayerControls.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
 
             TPCplayerControls.PlayerActions.Shift.performed += i => shiftInput = true;
             TPCplayerControls.PlayerActions.Shift.canceled += i => shiftInput = false;
@@ -53,7 +54,6 @@ public class InputManager : MonoBehaviour
 
             TPCplayerControls.PlayerActions.Flashlight.performed += i => flashlightInput = true;
             TPCplayerControls.PlayerActions.Flashlight.canceled += i => flashlightInput = false;
-
         }
         TPCplayerControls.Enable();
     }
@@ -62,9 +62,11 @@ public class InputManager : MonoBehaviour
     {
         TPCplayerControls.Disable();
     }
+
     private void LateUpdate()
     {
         cameraManager.HandleAllCameraMovement();
+        UpdateNormalMapOffset();
     }
 
     public void HandleAllInputs()
@@ -81,7 +83,8 @@ public class InputManager : MonoBehaviour
         horizonalInput = movementInput.x;
 
         cameraInputY = cameraInput.y;
-        cameraInputX = cameraInput.x;
+
+        cameraInputX = Mathf.Min(cameraInput.x, 0);
 
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizonalInput) + Mathf.Abs(verticalInput));
         animationManager.UpdateAnimatorValues(0, moveAmount, playerLocomotion.isSprinting);
@@ -89,38 +92,14 @@ public class InputManager : MonoBehaviour
 
     private void HandleSprintInput()
     {
-        if(shiftInput && moveAmount > 0.5f)
-        {
-            playerLocomotion.isSprinting = true;
-        }
-        else
-        {
-            playerLocomotion.isSprinting = false;
-        }
+        playerLocomotion.isSprinting = shiftInput && moveAmount > 0.5f;
     }
 
     private void HandleInteractInput()
     {
-        if(interactInput)
+        if (interactInput)
         {
             interactor.AttemptInteract();
-        }
-        else
-        {
-
-        }
-    }
-
-    public void DisablePlayerInput()
-    {
-        if(TPCplayerControls != null)
-        {
-
-            TPCplayerControls.Disable();
-            horizonalInput = 0;
-            verticalInput = 0;
-            movementInput = Vector2.zero;
-
         }
     }
 
@@ -130,9 +109,20 @@ public class InputManager : MonoBehaviour
         {
             flashlight.CastFlashlightRay();
         }
-        else
-        {
+    }
 
+    public void DisablePlayerInput()
+    {
+        if (TPCplayerControls != null)
+        {
+            TPCplayerControls.Disable();
+            horizonalInput = 0;
+            verticalInput = 0;
+            movementInput = Vector2.zero;
         }
+    }
+
+    private void UpdateNormalMapOffset()
+    {
     }
 }

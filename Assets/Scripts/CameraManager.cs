@@ -4,7 +4,7 @@ using UnityEngine.InputSystem.XInput;
 public class CameraManager : MonoBehaviour
 {
     public Transform cameraPivot;
-    public Transform cameraTransform; // Reference to the actual camera
+    public Transform cameraTransform;
 
     public float cameraLookSpeed = 0.2f;
     public float cameraPivotSpeed = 0.2f;
@@ -13,8 +13,10 @@ public class CameraManager : MonoBehaviour
     public float pivotAngle; // Up/Down
     public float minimumVerticalLook = -35;
     public float maximumVerticalLook = 35;
+    public float minimumHorizontalLook = 0;
+    public float maximumHorizontalLook = 35;
     public bool bShouldMoveCamera = true;
-    public bool useCameraBoom = false; // Toggle for boom functionality
+    public bool useCameraBoom = false;
 
     InputManager inputManager;
 
@@ -24,7 +26,7 @@ public class CameraManager : MonoBehaviour
 
         if (cameraTransform != null && cameraPivot != null)
         {
-            cameraTransform.SetParent(cameraPivot); // Ensure the camera is a child of the pivot
+            cameraTransform.SetParent(cameraPivot);
         }
     }
 
@@ -38,19 +40,18 @@ public class CameraManager : MonoBehaviour
         if (!bShouldMoveCamera)
             return;
 
-        lookAngle += inputManager.cameraInputX * cameraLookSpeed;
-        pivotAngle -= inputManager.cameraInputY * cameraPivotSpeed;
-        pivotAngle = Mathf.Clamp(pivotAngle, minimumVerticalLook, maximumVerticalLook);
+        lookAngle -= inputManager.cameraInputX * cameraLookSpeed;
+        lookAngle = Mathf.Clamp(lookAngle, minimumHorizontalLook, maximumHorizontalLook);
+        //pivotAngle -= inputManager.cameraInputY * cameraPivotSpeed;
+        //pivotAngle = Mathf.Clamp(pivotAngle, minimumVerticalLook, maximumVerticalLook);
 
         if (useCameraBoom)
         {
-            // Rotate the pivot itself, so the camera follows naturally
             Quaternion pivotRotation = Quaternion.Euler(pivotAngle, lookAngle, 0);
             cameraPivot.rotation = pivotRotation;
         }
         else
         {
-            // Original behavior: Rotate the camera and pivot separately
             Quaternion horizontalRotation = Quaternion.Euler(0, lookAngle, 0);
             transform.rotation = horizontalRotation;
 

@@ -106,8 +106,7 @@ public class GameManager : MonoBehaviour
 
     void HandleSlampointReached()
     {
-        Debug.Log("Load the next level or whatever");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     private void Update()
