@@ -4846,14 +4846,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 1940608286}
   cameraTransform: {fileID: 1301589013}
-  cameraLookSpeed: 0.01
+  cameraLookSpeed: 0.05
   cameraPivotSpeed: 0.01
   lookAngle: 0
   pivotAngle: 0
   minimumVerticalLook: 0
   maximumVerticalLook: 0
   minimumHorizontalLook: 0
-  maximumHorizontalLook: 35
+  maximumHorizontalLook: 90
   bShouldMoveCamera: 1
   useCameraBoom: 1
 --- !u!1 &1301606051 stripped
@@ -5626,6 +5626,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4747934584666923024, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
     - target: {fileID: 919132149155446097, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
       propertyPath: m_Name
       value: Marble
@@ -5637,14 +5641,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1459797246}
+      addedObject: {fileID: 1459797249}
   m_SourcePrefab: {fileID: 100100000, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
 --- !u!4 &1459797243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
   m_PrefabInstance: {fileID: 1459797242}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1459797246
+--- !u!114 &1459797249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8092,7 +8096,7 @@ MonoBehaviour:
   object1: {fileID: 286655500}
   object2: {fileID: 1459797243}
   mainCamera: {fileID: 1301589012}
-  BallRunOverLevelIndex: 2
+  BallRunOverLevelIndex: 1
   GoText: {fileID: 2110352483}
 --- !u!4 &2093088744
 Transform:

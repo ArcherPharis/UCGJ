@@ -119,30 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &102342007 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4486345378335334034, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-  m_PrefabInstance: {fileID: 5866860943654661387}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &102342016 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3821695669393212456, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-  m_PrefabInstance: {fileID: 5866860943654661387}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &102342017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102342007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190b742345eac3d43a093d0ed5d89c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Range: 10
-  FlashlightTransform: {fileID: 102342016}
 --- !u!1 &330488923
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a70fc35396ed64d96beb643dc4a20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoorToSpawn: {fileID: 759478685116745395, guid: cf585dbf06d34434fa2c9e88dac229c5, type: 3}
+  DoorSpawnLocation: {fileID: 691635019}
 --- !u!1 &900459726
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,14 +834,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1412238609549827362, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      propertyPath: runningSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1412238609549827362, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      propertyPath: sprintingSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 3821695669393212456, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -908,21 +878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4803547002444416476, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7199372486921231954, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b3f8324f9c31c274995f57e56baf0462, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4486345378335334034, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 102342017}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -5,11 +5,13 @@ public class AnimationManager : MonoBehaviour
     Animator animator;
     int horizontal;
     int vertical;
+    int equipFlashlight;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         horizontal = Animator.StringToHash("Horizontal");
         vertical = Animator.StringToHash("Vertical");
+        equipFlashlight = Animator.StringToHash("Flashlight");
     }
     public void UpdateAnimatorValues(float HorizonalMovement, float VerticalMovement, bool isSprinting)
     {
@@ -70,5 +72,10 @@ public class AnimationManager : MonoBehaviour
 
         animator.SetFloat(horizontal, SnappedHorizontal, 0.1f, Time.deltaTime);
         animator.SetFloat(vertical, SnappedVertical, 0.1f, Time.deltaTime);
+    }
+
+    public void SetEquipFlashlight(bool state)
+    {
+        animator.SetBool(equipFlashlight, state);
     }
 }

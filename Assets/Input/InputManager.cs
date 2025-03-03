@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour
     public bool shiftInput;
     public bool interactInput;
     public bool flashlightInput = false;
+    public bool flashlightOn = false;
 
     [Header("Normal Map Scrolling")]
     [SerializeField] private Material material; // Assign the material in the inspector
@@ -107,7 +108,19 @@ public class InputManager : MonoBehaviour
     {
         if (flashlightInput)
         {
+            flashlightOn = true;
+            animationManager.SetEquipFlashlight(true);
+        }
+        else
+        {
+            flashlightOn = false;
+            animationManager.SetEquipFlashlight(false);
+        }
+
+        if (flashlightOn)
+        {
             flashlight.CastFlashlightRay();
+
         }
     }
 
@@ -119,6 +132,14 @@ public class InputManager : MonoBehaviour
             horizonalInput = 0;
             verticalInput = 0;
             movementInput = Vector2.zero;
+        }
+    }
+
+    public void EnablePlayerInput()
+    {
+        if (TPCplayerControls != null)
+        {
+            TPCplayerControls.Enable();
         }
     }
 
