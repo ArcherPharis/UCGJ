@@ -20,14 +20,36 @@ public class CameraManager : MonoBehaviour
 
     InputManager inputManager;
 
+    [SerializeField] Transform targetTransform;
+    private Vector3 initialOffset;
+    private Vector3 cameraFollowVelocity = Vector3.zero;
+    float cameraFollowSpeed = 0.2f;
+
     private void Awake()
     {
         inputManager = FindFirstObjectByType<InputManager>();
+        if(targetTransform)
+        {
+            initialOffset = transform.position - targetTransform.position;
 
+        }
         if (cameraTransform != null && cameraPivot != null)
         {
             cameraTransform.SetParent(cameraPivot);
         }
+    }
+
+    public void FollowTarget()
+    {
+        Vector3 targetPosition = targetTransform.position + initialOffset;
+
+        // Smoothly transition the camera position with some lag
+        transform.position = Vector3.SmoothDamp(
+            transform.position,   // Current position
+            targetPosition,       // Target position
+            ref cameraFollowVelocity,   // Reference velocity (SmoothDamp uses this)
+            cameraFollowSpeed     // The smooth time (higher = more lag)
+        );
     }
 
     public void HandleAllCameraMovement()
