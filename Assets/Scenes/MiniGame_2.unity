@@ -5369,7 +5369,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 361b1740081c9954b9a726e82af1032f, type: 3}
   m_Resource: {fileID: 8300000, guid: 361b1740081c9954b9a726e82af1032f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.049
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5714,7 +5714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6100006
+      value: -4.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 12e3d9018526eed40b26ed4b3ab593f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5790,7 +5790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9418622f013eb6d4b9969ba4fa5ef00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -0.1
+  moveSpeed: -0.385
 --- !u!1001 &1543113679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6964,7 +6964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1412238609549827362, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
       propertyPath: sprintingSpeed
-      value: 2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3821695669393212456, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8248,6 +8248,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1301589012}
   BallRunOverLevelIndex: 1
   GoText: {fileID: 2110352483}
+  newPipelineAsset: {fileID: 0}
 --- !u!4 &2093088744
 Transform:
   m_ObjectHideFlags: 0
