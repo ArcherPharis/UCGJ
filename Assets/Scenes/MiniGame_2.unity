@@ -6885,6 +6885,10 @@ PrefabInstance:
       propertyPath: shouldFollowTarget
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8199155291107164738, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+      propertyPath: m_Cookie
+      value: 
+      objectReference: {fileID: 2800000, guid: e2886730e473dff41994d60c01369016, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

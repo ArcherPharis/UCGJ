@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
     Interactor interactor;
     Flashlight flashlight;
 
+    [SerializeField] Light FlashlightLight;
+
     public Vector2 movementInput;
     public Vector2 cameraInput;
 
@@ -109,11 +111,13 @@ public class InputManager : MonoBehaviour
         if (flashlightInput)
         {
             flashlightOn = true;
+            FlashlightLight.enabled = true;
             animationManager.SetEquipFlashlight(true);
         }
         else
         {
             flashlightOn = false;
+            FlashlightLight.enabled = false;
             animationManager.SetEquipFlashlight(false);
         }
 
