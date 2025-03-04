@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.XInput;
 public class CameraManager : MonoBehaviour
 {
     public Transform cameraPivot;
+    public Transform rotatePivot;
     public Transform cameraTransform;
 
     public float cameraLookSpeed = 0.2f;
@@ -82,6 +83,7 @@ public class CameraManager : MonoBehaviour
 
         if (useCameraBoom)
         {
+            cameraTransform.SetParent(cameraPivot);
             Quaternion pivotRotation = Quaternion.Euler(pivotAngle, lookAngle, 0);
             cameraPivot.rotation = pivotRotation;
         }
