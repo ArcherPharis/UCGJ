@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 70668589f5fdd964daff1df93ffc6734
+guid: eeba8640bb9e4e049bff79aadfada509
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hallway_MAT
-    second: {fileID: 2100000, guid: 6d43ca746e48a0d47a912669a7621adf, type: 2}
+      name: Flashlight_Light_MAT
+    second: {fileID: 2100000, guid: a1ef0256aa1189e49a4561c7672d5004, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -74,7 +74,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

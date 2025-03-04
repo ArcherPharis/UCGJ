@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: 2_PC_RPAsset
+  m_Name: 3_PC_RPAsset
   m_EditorClassIdentifier: 
   k_AssetVersion: 12
   k_AssetPreviousVersion: 12
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
-  - {fileID: 11400000, guid: 57b6b86d8b00e9c4ba658ddd870e5ea5, type: 2}
+  - {fileID: 11400000, guid: 9a016119a9308f04a82a2aa5f59ad95a, type: 2}
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 1
   m_RequireOpaqueTexture: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_MaxPixelLights: 0
   m_ShadowAtlasResolution: 256
   m_VolumeFrameworkUpdateMode: 0
-  m_VolumeProfile: {fileID: 11400000, guid: 59f91394cda6f934ab161730c4de237d, type: 2}
+  m_VolumeProfile: {fileID: 11400000, guid: a150ab0d14628e142b865d73a0b1425c, type: 2}
   apvScenesData:
     obsoleteSceneBounds:
       m_Keys: []

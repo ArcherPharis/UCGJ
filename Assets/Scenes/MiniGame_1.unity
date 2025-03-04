@@ -934,6 +934,22 @@ PrefabInstance:
       propertyPath: m_FOVAxisMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4908793226025288283, guid: f4331218b350cff46a4a4d2081728649, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908793226025288283, guid: f4331218b350cff46a4a4d2081728649, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908793226025288283, guid: f4331218b350cff46a4a4d2081728649, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908793226025288283, guid: f4331218b350cff46a4a4d2081728649, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5927011112723610857, guid: f4331218b350cff46a4a4d2081728649, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -997,6 +1013,10 @@ PrefabInstance:
     - target: {fileID: 7438157224284300336, guid: f4331218b350cff46a4a4d2081728649, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438157224284300336, guid: f4331218b350cff46a4a4d2081728649, type: 3}
+      propertyPath: m_TaaSettings.m_FrameInfluence
+      value: 0.100000024
       objectReference: {fileID: 0}
     - target: {fileID: 8619997488085404418, guid: f4331218b350cff46a4a4d2081728649, type: 3}
       propertyPath: m_LocalRotation.w
