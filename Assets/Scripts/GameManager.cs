@@ -23,9 +23,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float minIntensity = 0f;
     [SerializeField] private float maxIntensity = 5f;
 
+    public AudioSource audioSource;
+
     private void Awake()
     {
         playerInput = FindFirstObjectByType<InputManager>();
+        audioSource = GetComponent<AudioSource>();
         QualitySettings.SetQualityLevel(0);
     }
 

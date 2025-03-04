@@ -118,6 +118,7 @@ public class MovingWall : MonoBehaviour
         state = MovementState.Stopped;
         if (delayCoroutine != null)
         {
+
             StopCoroutine(delayCoroutine);
             delayCoroutine = null;
         }

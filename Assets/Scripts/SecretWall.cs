@@ -31,6 +31,11 @@ public class SecretWall : MonoBehaviour, IFlashlightable
         {
             wall.StopWall();
         }
+        GameManager gameManager = FindFirstObjectByType<GameManager>();
+        if (gameManager)
+        {
+            gameManager.audioSource.Stop();
+        }
 
         Instantiate(DoorToSpawn, DoorSpawnLocation);
     }
