@@ -44,7 +44,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 0.96088624, b: 0.8537736, a: 1}
-  m_Intensity: 66.29
+  m_Intensity: 0
   m_Range: 4
   m_SpotAngle: 21.863632
   m_InnerSpotAngle: 13.665716
@@ -380,6 +380,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Range: 10
   FlashlightTransform: {fileID: 3821695669393212456}
+--- !u!1001 &3831443719790511728
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5615527445543539674}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12.296
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12.296
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.296
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.153
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+      propertyPath: m_Name
+      value: Flashlight_Light
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+--- !u!4 &3649812072692097435 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eeba8640bb9e4e049bff79aadfada509, type: 3}
+  m_PrefabInstance: {fileID: 3831443719790511728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5360661282836526129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,6 +512,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96df1db6c87b3e47be7b66f92bdffd0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7461427883029040872}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96df1db6c87b3e47be7b66f92bdffd0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3649812072692097435}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96df1db6c87b3e47be7b66f92bdffd0, type: 3}
 --- !u!4 &5615527445543539674 stripped
