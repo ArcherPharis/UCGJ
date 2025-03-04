@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class Lv2GameManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class Lv2GameManager : MonoBehaviour
     public Camera mainCamera;
     public int BallRunOverLevelIndex = 2;
     public GameObject GoText;
+
+    public RenderPipelineAsset newPipelineAsset;
 
     private void Awake()
     {
