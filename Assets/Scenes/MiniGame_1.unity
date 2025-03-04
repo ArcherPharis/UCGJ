@@ -3543,6 +3543,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 951996406}
     - target: {fileID: 2003531144957693019, guid: 98d7b15825706664ca602fbd7fe2c9fb, type: 3}
+      propertyPath: newPipelineAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
+    - target: {fileID: 2003531144957693019, guid: 98d7b15825706664ca602fbd7fe2c9fb, type: 3}
       propertyPath: tooCloseDistance
       value: 2
       objectReference: {fileID: 0}

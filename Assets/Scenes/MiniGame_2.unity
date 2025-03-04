@@ -8248,7 +8248,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1301589012}
   BallRunOverLevelIndex: 1
   GoText: {fileID: 2110352483}
-  newPipelineAsset: {fileID: 0}
+  newPipelineAsset: {fileID: 11400000, guid: a913dc77baa0c7640a60563859f8a3a5, type: 2}
 --- !u!4 &2093088744
 Transform:
   m_ObjectHideFlags: 0
