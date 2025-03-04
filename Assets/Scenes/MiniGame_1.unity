@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5625046626554133757, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+      propertyPath: InteractRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
       propertyPath: material
       value: 
