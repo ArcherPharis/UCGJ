@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playerInput = FindFirstObjectByType<InputManager>();
-        if(newPipelineAsset)
-        GraphicsSettings.defaultRenderPipeline = newPipelineAsset;
+        QualitySettings.SetQualityLevel(1);
     }
 
     private void HandleDoorRevealLogic()
