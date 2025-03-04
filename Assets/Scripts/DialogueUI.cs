@@ -13,7 +13,6 @@ public class DialogueUI : MonoBehaviour
     {
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseDialogueBox();
-        ShowDialogue(testDialogue);
     }
 
     public void ShowDialogue(DialogueObject DialogueObj)
@@ -27,7 +26,8 @@ public class DialogueUI : MonoBehaviour
         foreach(string dialogue in Obj.Dialogue)
         {
             yield return typewriterEffect.RunTypeText(dialogue, text);
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
+            yield return new WaitForSeconds(3);
+            //yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Mouse0));
         }
         CloseDialogueBox();
     }
@@ -36,6 +36,11 @@ public class DialogueUI : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         text.text = string.Empty;
+    }
+
+    public void PlayInitialDialogue()
+    {
+        ShowDialogue(testDialogue);
     }
 
 }

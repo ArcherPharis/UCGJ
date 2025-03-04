@@ -24,10 +24,13 @@ public class PlayButton : MonoBehaviour
     public float fadeDuration = 2f;
     public UnityEvent onFadeComplete;
 
+    DialogueUI DGUI;
+
     private void Awake()
     {
         HideUI();
         StartCoroutine(FadeSequence());
+        DGUI = FindFirstObjectByType<DialogueUI>();
     }
 
     private IEnumerator FadeSequence()
@@ -92,7 +95,6 @@ public class PlayButton : MonoBehaviour
     public void OnFadesComplete()
     {
         ShowUI();
-        Debug.Log("Done");
 
     }
 
@@ -111,6 +113,7 @@ public class PlayButton : MonoBehaviour
                 isTransitioning = false;
                 mainCamera.enabled = false;
                 targetCamera.enabled = true;
+                DGUI.PlayInitialDialogue();
             }
         }
     }
