@@ -21,4 +21,9 @@ public class Door : MonoBehaviour, IInteractableObject
     {
         SceneManager.LoadScene(LevelIndexToLoad);
     }
+
+    public void SetDoorLoadIndex(int value)
+    {
+        LevelIndexToLoad = value;
+    }
 }
