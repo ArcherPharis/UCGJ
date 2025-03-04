@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playerInput = FindFirstObjectByType<InputManager>();
-        QualitySettings.SetQualityLevel(1);
+        QualitySettings.SetQualityLevel(0);
     }
 
     private void HandleDoorRevealLogic()

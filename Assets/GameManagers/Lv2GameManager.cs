@@ -16,7 +16,7 @@ public class Lv2GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        QualitySettings.SetQualityLevel(2);
+        QualitySettings.SetQualityLevel(1);
     }
 
     private void Update()
