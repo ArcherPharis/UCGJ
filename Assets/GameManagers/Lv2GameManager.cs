@@ -16,6 +16,8 @@ public class Lv2GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if (newPipelineAsset)
+        GraphicsSettings.defaultRenderPipeline = newPipelineAsset;
     }
 
     private void Update()

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool doorRevealed = false;
     private Coroutine revealCoroutine;
     private Coroutine lightCoroutine;
+    public RenderPipelineAsset newPipelineAsset;
 
     [SerializeField] Light Light;
     [SerializeField] private float lightTransitionSpeed = 2f;
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playerInput = FindFirstObjectByType<InputManager>();
+        if(newPipelineAsset)
+        GraphicsSettings.defaultRenderPipeline = newPipelineAsset;
     }
 
     private void HandleDoorRevealLogic()
