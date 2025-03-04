@@ -243,6 +243,7 @@ MonoBehaviour:
   interactInput: 0
   flashlightInput: 0
   flashlightOn: 0
+  FlashlightObject: {fileID: 5090629817458755936}
   material: {fileID: 0}
   scrollRate: 0.1
   invertScroll: 0
@@ -440,6 +441,11 @@ PrefabInstance:
       addedObject: {fileID: 7461427883029040872}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96df1db6c87b3e47be7b66f92bdffd0, type: 3}
+--- !u!1 &5090629817458755936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b96df1db6c87b3e47be7b66f92bdffd0, type: 3}
+  m_PrefabInstance: {fileID: 5360661282836526129}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5615527445543539674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b96df1db6c87b3e47be7b66f92bdffd0, type: 3}

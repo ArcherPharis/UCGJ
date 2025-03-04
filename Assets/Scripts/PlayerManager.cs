@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
     InputManager inputManager;
     TPCPlayerLocomotion playerLocomotion;
     CameraManager cameraManager;
+    
 
     public bool shouldFollowTarget;
     private void Awake()

@@ -26,6 +26,8 @@ public class InputManager : MonoBehaviour
     public bool flashlightInput = false;
     public bool flashlightOn = false;
 
+    [SerializeField] GameObject FlashlightObject;
+
     [Header("Normal Map Scrolling")]
     [SerializeField] private Material material; // Assign the material in the inspector
     [SerializeField] private float scrollRate = 0.1f; // Adjust scrolling speed
@@ -113,12 +115,15 @@ public class InputManager : MonoBehaviour
             flashlightOn = true;
             FlashlightLight.enabled = true;
             animationManager.SetEquipFlashlight(true);
+            FlashlightObject.SetActive(true);
         }
         else
         {
             flashlightOn = false;
             FlashlightLight.enabled = false;
             animationManager.SetEquipFlashlight(false);
+            FlashlightObject.SetActive(false);
+
         }
 
         if (flashlightOn)
