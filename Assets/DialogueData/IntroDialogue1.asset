@@ -13,13 +13,9 @@ MonoBehaviour:
   m_Name: IntroDialogue1
   m_EditorClassIdentifier: 
   dialogue:
-  - 'Hello!
+  - 'You have walked this road before. Haven''t you?
 
-    I am the first text box!
-
-    Watch me create another one!!!'
-  - 'It is I, the second one!
-
-    The second text box!
-
-    Weeeeeeeeeeeeeeeeeeeeee!'
+    Familiar patterns, familiar
+    instructions.'
+  - "But what if the path was never as simple as it seemed?\nYou are searching for
+    something\u2026 perhaps an answer? Or maybe just reassurance."
