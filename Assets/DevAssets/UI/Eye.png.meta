@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 654e8b3bdecd8554b8ec7f22fb3a019f
+guid: a5154201a08aadf438a37ab67f6fbd76
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Flashlight_On_0
+      name: Eye_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 29
-        width: 846
-        height: 857
+        x: 166
+        y: 116
+        width: 2810
+        height: 2696
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dd8839e5e3e26944ba8882a8e9831bc
-      internalID: 2079941998
+      spriteID: 550a3894cdb266f41afceff2f4f91088
+      internalID: -976914777
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5a98563ad5039884388a88484de1c70d
+    spriteID: f9c816383f0cb6448b0eb6528792c88f
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Flashlight_On_0: 2079941998
+      Eye_0: -976914777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
