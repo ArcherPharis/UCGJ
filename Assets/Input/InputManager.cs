@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     Interactor interactor;
     Flashlight flashlight;
 
-    [SerializeField] Light FlashlightLight;
+    [SerializeField] GameObject FlashlightLight;
 
     public Vector2 movementInput;
     public Vector2 cameraInput;
@@ -113,14 +113,14 @@ public class InputManager : MonoBehaviour
         if (flashlightInput)
         {
             flashlightOn = true;
-            FlashlightLight.enabled = true;
+            FlashlightLight.SetActive(true);
             animationManager.SetEquipFlashlight(true);
             FlashlightObject.SetActive(true);
         }
         else
         {
             flashlightOn = false;
-            FlashlightLight.enabled = false;
+            FlashlightLight.SetActive(false);
             animationManager.SetEquipFlashlight(false);
             FlashlightObject.SetActive(false);
 
