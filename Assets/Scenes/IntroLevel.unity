@@ -278,6 +278,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+      propertyPath: FlashlightLight
+      value: 
+      objectReference: {fileID: 131446670}
+    - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
       propertyPath: FlashlightObject
       value: 
       objectReference: {fileID: 131446670}

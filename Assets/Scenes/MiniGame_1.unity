@@ -655,6 +655,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+      propertyPath: flashlightOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+      propertyPath: FlashlightLight
+      value: 
+      objectReference: {fileID: 276961570}
+    - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+      propertyPath: FlashlightObject
+      value: 
+      objectReference: {fileID: 276961571}
+    - target: {fileID: 6012094300290574640, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
       propertyPath: scrollingMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 6d43ca746e48a0d47a912669a7621adf, type: 2}
@@ -663,6 +675,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+--- !u!1 &276961570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4174111256406326049, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+  m_PrefabInstance: {fileID: 276961569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &276961571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5090629817458755936, guid: 7a2fc084bc3835e449d80a64eec20ca3, type: 3}
+  m_PrefabInstance: {fileID: 276961569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &326165692
 PrefabInstance:
   m_ObjectHideFlags: 0
