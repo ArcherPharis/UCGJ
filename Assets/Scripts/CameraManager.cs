@@ -17,6 +17,7 @@ public class CameraManager : MonoBehaviour
     public float maximumHorizontalLook = 35;
     public bool bShouldMoveCamera = true;
     public bool useCameraBoom = false;
+    private bool shouldFollow = true;
 
     InputManager inputManager;
 
@@ -39,16 +40,28 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+
     public void FollowTarget()
     {
+        if (!shouldFollow)
+            return; // Stop following if the player manually moved the camera
+
+        Vector3 currentOffset = transform.position - targetTransform.position;
+
+        // If the player manually moved the camera (offset changed), stop following
+        if (Vector3.Distance(currentOffset, initialOffset) > 0.5f)
+        {
+            shouldFollow = false;
+            return;
+        }
+
         Vector3 targetPosition = targetTransform.position + initialOffset;
 
-        // Smoothly transition the camera position with some lag
         transform.position = Vector3.SmoothDamp(
-            transform.position,   // Current position
-            targetPosition,       // Target position
-            ref cameraFollowVelocity,   // Reference velocity (SmoothDamp uses this)
-            cameraFollowSpeed     // The smooth time (higher = more lag)
+            transform.position,
+            targetPosition,
+            ref cameraFollowVelocity,
+            cameraFollowSpeed
         );
     }
 
