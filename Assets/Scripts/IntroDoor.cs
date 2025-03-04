@@ -20,6 +20,7 @@ public class IntroDoor : MonoBehaviour, IFlashlightable
         if (isRevealed)
             return;
 
+        isRevealed = true;
         mr.enabled = true;
         audioSource.Play();
         Door door = gameObject.AddComponent<Door>();
