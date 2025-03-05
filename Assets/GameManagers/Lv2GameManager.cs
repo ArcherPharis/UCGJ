@@ -11,20 +11,35 @@ public class Lv2GameManager : MonoBehaviour
     public GameObject GoText;
 
     public RenderPipelineAsset newPipelineAsset;
+    DialogueUI dialogueUI;
+    [SerializeField] DialogueObject IntroDialogue;
+    [SerializeField] DialogueObject CrushedDialoague;
+    LevelTransitioner levelTransitioner;
+    bool crushed = false;
+
 
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         QualitySettings.SetQualityLevel(1);
+        dialogueUI = FindFirstObjectByType<DialogueUI>();
+        levelTransitioner = GetComponent<LevelTransitioner>();
+    }
+
+    private void Start()
+    {
+        dialogueUI.ShowDialogue(IntroDialogue);
+
     }
 
     private void Update()
     {
-        if (CheckScreenOverlap(object1, object2))
+        if (CheckScreenOverlap(object1, object2) && !crushed)
         {
-            Debug.Log("Overlap");
-            SceneManager.LoadScene(BallRunOverLevelIndex);
+            dialogueUI.ShowDialogue(CrushedDialoague);
+            levelTransitioner.StartFadein(2);
+            crushed = true;
         }
 
     }
