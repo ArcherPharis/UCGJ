@@ -25,6 +25,8 @@ public class InputManager : MonoBehaviour
     public bool interactInput;
     public bool flashlightInput = false;
     public bool flashlightOn = false;
+    public bool quitInput = false;
+
 
     [SerializeField] GameObject FlashlightObject;
 
@@ -54,6 +56,9 @@ public class InputManager : MonoBehaviour
             TPCplayerControls.PlayerActions.Shift.performed += i => shiftInput = true;
             TPCplayerControls.PlayerActions.Shift.canceled += i => shiftInput = false;
 
+            TPCplayerControls.PlayerActions.Quit.performed += i => quitInput = true;
+            TPCplayerControls.PlayerActions.Quit.canceled += i => quitInput = false;
+
             TPCplayerControls.PlayerActions.Interact.performed += i => interactInput = true;
             TPCplayerControls.PlayerActions.Interact.canceled += i => interactInput = false;
 
@@ -80,6 +85,7 @@ public class InputManager : MonoBehaviour
         HandleSprintInput();
         HandleInteractInput();
         HandleFlashlightInput();
+        HandleQuitInput();
     }
 
     private void HandleMovementInput()
@@ -154,5 +160,13 @@ public class InputManager : MonoBehaviour
 
     private void UpdateNormalMapOffset()
     {
+    }
+
+    private void HandleQuitInput()
+    {
+        if(quitInput)
+        {
+            Application.Quit();
+        }
     }
 }
