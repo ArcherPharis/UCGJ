@@ -21,6 +21,7 @@ public class PlayButton : MonoBehaviour
 
     public Image image1; 
     public Image image2;
+    public Image image3;
     public Image blackScreen;
     public Image whiteScreen;
     public float fadeDuration = 2f;
@@ -29,6 +30,8 @@ public class PlayButton : MonoBehaviour
 
     DialogueUI DGUI;
     [SerializeField] GameObject Creds;
+    [SerializeField] GameObject Creds2;
+
 
     private void Awake()
     {
@@ -48,6 +51,9 @@ public class PlayButton : MonoBehaviour
         // Fade in and out for image 2
         yield return StartCoroutine(FadeIn(image2));
         yield return StartCoroutine(FadeOut(image2));
+
+        yield return StartCoroutine(FadeIn(image3));
+        yield return StartCoroutine(FadeOut(image3));
 
         yield return StartCoroutine(FadeOut(blackScreen));
 
@@ -189,6 +195,8 @@ public class PlayButton : MonoBehaviour
         ShowUI();
         BackButton.SetActive(false);
         Creds.SetActive(false);
+        Creds2.SetActive(false);
+
     }
 
     public void OnButtonQuit()
@@ -201,6 +209,7 @@ public class PlayButton : MonoBehaviour
     {
         HideUI();
         Creds.SetActive(true);
+        Creds2.SetActive(true);
         BackButton.SetActive(true);
     }
     void HideUI()
