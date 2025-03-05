@@ -4959,7 +4959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 1497108532}
-  fadeDuration: 6
+  fadeDuration: 4
   onFadeComplete:
     m_PersistentCalls:
       m_Calls: []
