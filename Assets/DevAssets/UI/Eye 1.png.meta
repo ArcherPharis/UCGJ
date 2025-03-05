@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5154201a08aadf438a37ab67f6fbd76
+guid: 5efd1a803bb080f4fb7b591daf59fc12
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,10 +113,10 @@ TextureImporter:
       name: Eye_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 116
-        width: 2867
-        height: 2696
+        x: 135
+        y: 604
+        width: 2848
+        height: 2208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,6 +127,28 @@ TextureImporter:
       bones: []
       spriteID: 550a3894cdb266f41afceff2f4f91088
       internalID: -976914777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eye 1_0
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 116
+        width: 2379
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b647043e22c5c945a84a680b41e89a9
+      internalID: -749609414
       vertices: []
       indices: 
       edges: []
@@ -145,6 +167,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Eye 1_0: -749609414
       Eye_0: -976914777
       Eye_1: 1944749759
   mipmapLimitGroupName: 
