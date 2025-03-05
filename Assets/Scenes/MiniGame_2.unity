@@ -3388,7 +3388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelIndexToLoad: 1
-  DialogueToSay: {fileID: 0}
+  DialogueToSay: {fileID: 11400000, guid: 5cd54a617c6dfb84ebecbcec274064c1, type: 2}
 --- !u!1 &852198139 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 255b9b3a9f49a0249be5a08092d7f8ee, type: 3}
