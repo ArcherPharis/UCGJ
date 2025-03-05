@@ -89,7 +89,7 @@ public class MovingWall : MonoBehaviour
         float newX = Mathf.MoveTowards(currentX, 0.1f, slamSpeed * Time.deltaTime);
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
 
-        if (Mathf.Abs(newX) < 0.05f)
+        if (Mathf.Abs(newX) < 0.1f)
         {
             state = MovementState.Stopped;
             OnWallSlamReached?.Invoke();
