@@ -22,7 +22,9 @@ public class PlayButton : MonoBehaviour
     public Image image1; 
     public Image image2;
     public Image blackScreen;
+    public Image whiteScreen;
     public float fadeDuration = 2f;
+    public float whitefadeDuration = 3f;
     public UnityEvent onFadeComplete;
 
     DialogueUI DGUI;
@@ -53,6 +55,13 @@ public class PlayButton : MonoBehaviour
         OnFadesComplete();
     }
 
+    private IEnumerator WhiteFadeSequence()
+    {
+
+        yield return StartCoroutine(WhiteFadeIn(whiteScreen));
+        yield return StartCoroutine(WhiteFadeOut(whiteScreen));
+    }
+
     private IEnumerator FadeIn(Image image)
     {
         image.enabled = true;
@@ -81,6 +90,47 @@ public class PlayButton : MonoBehaviour
 
         // Fade out over time
         while (timeElapsed < fadeDuration)
+        {
+            timeElapsed += Time.deltaTime;
+            startColor.a = Mathf.Lerp(1, 0, timeElapsed / fadeDuration);
+            image.color = startColor;
+            yield return null;
+        }
+        startColor.a = 0;
+        image.color = startColor;
+
+        image.enabled = false;
+
+    }
+
+    private IEnumerator WhiteFadeIn(Image image)
+    {
+        image.enabled = true;
+
+        float timeElapsed = 0f;
+        Color startColor = image.color;
+        startColor.a = 0;
+        image.color = startColor;
+
+        while (timeElapsed < whitefadeDuration)
+        {
+            timeElapsed += Time.deltaTime;
+            startColor.a = Mathf.Lerp(0, 1, timeElapsed / fadeDuration);
+            image.color = startColor;
+            yield return null;
+        }
+
+        startColor.a = 1;
+        image.color = startColor;
+    }
+
+    private IEnumerator WhiteFadeOut(Image image)
+    {
+        float timeElapsed = 0f;
+        Color startColor = image.color;
+
+        // Fade out over time
+        while (timeElapsed < whitefadeDuration)
         {
             timeElapsed += Time.deltaTime;
             startColor.a = Mathf.Lerp(1, 0, timeElapsed / fadeDuration);
@@ -130,6 +180,7 @@ public class PlayButton : MonoBehaviour
             startRotation = mainCamera.transform.rotation;
             HideUI();
             targetCamera.enabled = true;
+            StartCoroutine(WhiteFadeSequence());
         }
     }
 
