@@ -278,6 +278,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6694865842394067920, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: typeWriterSpeed
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 7683098246811695457, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas

@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Final
   m_EditorClassIdentifier: 
   dialogue:
-  - "You expected danger. You followed the rules. But you saw the truth. The obstacles
-    were never real\u2014only your perception of them."
-  - You are free.
   - You anticipated danger and followed the rules. But in seeing the truth, you realized-the
     obstacles were never real, only reflections of your own perception.
   - Now, you are free.
