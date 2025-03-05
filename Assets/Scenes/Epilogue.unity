@@ -195,8 +195,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
+    - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
+    - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6220834721681600259, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
       propertyPath: m_Pivot.x

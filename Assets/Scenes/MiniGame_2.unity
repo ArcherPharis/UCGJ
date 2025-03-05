@@ -7993,6 +7993,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
+    - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
+    - target: {fileID: 4125820911568615820, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6220834721681600259, guid: 1b153fa1c5a20874fbbb52bb1db1e410, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8627,8 +8639,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
