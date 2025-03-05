@@ -7,6 +7,7 @@ public class IntroDoor : MonoBehaviour, IFlashlightable
     AudioSource audioSource;
     bool isRevealed = false;
     [SerializeField] int LevelIndex;
+    [SerializeField] DialogueObject DialogueObject;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class IntroDoor : MonoBehaviour, IFlashlightable
         audioSource.Play();
         Door door = gameObject.AddComponent<Door>();
         door.SetDoorLoadIndex(LevelIndex);
+        door.SetDialogue(DialogueObject);
         
     }
 }
