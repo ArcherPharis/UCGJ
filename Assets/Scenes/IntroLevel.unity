@@ -2139,6 +2139,7 @@ RectTransform:
   - {fileID: 311926619}
   - {fileID: 1697192137}
   - {fileID: 1148700692}
+  - {fileID: 949360527}
   - {fileID: 214877194}
   - {fileID: 943684730}
   - {fileID: 1462104864}
@@ -3536,6 +3537,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949137259}
+  m_CullTransparentMesh: 1
+--- !u!1 &949360526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949360527}
+  - component: {fileID: 949360529}
+  - component: {fileID: 949360528}
+  m_Layer: 5
+  m_Name: Lunar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &949360527
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949360526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 621569352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2810.0002, y: 2696.448}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &949360528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949360526}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -976914777, guid: a5154201a08aadf438a37ab67f6fbd76, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &949360529
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949360526}
   m_CullTransparentMesh: 1
 --- !u!4 &978649649 stripped
 Transform:
@@ -5063,6 +5139,7 @@ MonoBehaviour:
   BackButton: {fileID: 473678587}
   image1: {fileID: 1697192138}
   image2: {fileID: 1148700693}
+  image3: {fileID: 949360528}
   blackScreen: {fileID: 1497108532}
   whiteScreen: {fileID: 311926620}
   fadeDuration: 2
@@ -5071,6 +5148,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Creds: {fileID: 214877193}
+  Creds2: {fileID: 943684729}
 --- !u!114 &1263592942
 MonoBehaviour:
   m_ObjectHideFlags: 0
