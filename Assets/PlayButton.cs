@@ -17,6 +17,7 @@ public class PlayButton : MonoBehaviour
     [SerializeField] Button PlayButt;
     [SerializeField] Button QuitButton;
     [SerializeField] Button CreditsButton;
+    [SerializeField] GameObject BackButton;
 
     public Image image1; 
     public Image image2;
@@ -25,6 +26,7 @@ public class PlayButton : MonoBehaviour
     public UnityEvent onFadeComplete;
 
     DialogueUI DGUI;
+    [SerializeField] GameObject Creds;
 
     private void Awake()
     {
@@ -131,6 +133,13 @@ public class PlayButton : MonoBehaviour
         }
     }
 
+    public void OnBackButtonClicked()
+    {
+        ShowUI();
+        BackButton.SetActive(false);
+        Creds.SetActive(false);
+    }
+
     public void OnButtonQuit()
     {
         Application.Quit();
@@ -140,6 +149,8 @@ public class PlayButton : MonoBehaviour
     public void OnCredits()
     {
         HideUI();
+        Creds.SetActive(true);
+        BackButton.SetActive(true);
     }
     void HideUI()
     {
