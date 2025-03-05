@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayButton : MonoBehaviour
@@ -32,6 +33,7 @@ public class PlayButton : MonoBehaviour
     DialogueUI DGUI;
     [SerializeField] GameObject Creds;
     [SerializeField] GameObject Creds2;
+    InputManager playerInput;
 
 
     private void Awake()
@@ -39,6 +41,11 @@ public class PlayButton : MonoBehaviour
         HideUI();
         StartCoroutine(FadeSequence());
         DGUI = FindFirstObjectByType<DialogueUI>();
+        playerInput = FindFirstObjectByType<InputManager>();
+        if(playerInput)
+        {
+            playerInput.DisablePlayerInput();
+        }
     }
 
     private IEnumerator FadeSequence()
@@ -173,6 +180,10 @@ public class PlayButton : MonoBehaviour
                 mainCamera.enabled = false;
                 targetCamera.enabled = true;
                 DGUI.PlayInitialDialogue();
+                if (playerInput)
+                {
+                    playerInput.EnablePlayerInput();
+                }
             }
         }
     }

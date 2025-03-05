@@ -326,7 +326,7 @@ public partial class @TPCPlayerControls: IInputActionCollection2, IDisposable
                     ""id"": ""515f5ddd-8507-40b7-99e1-e833be525c1a"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": false
                 }
             ],

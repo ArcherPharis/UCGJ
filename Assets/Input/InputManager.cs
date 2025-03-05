@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
     TPCPlayerLocomotion playerLocomotion;
     Interactor interactor;
     Flashlight flashlight;
+    Pauser pauser;
+    bool currentlyPaused = false;
 
     [SerializeField] GameObject FlashlightLight;
 
@@ -43,6 +45,12 @@ public class InputManager : MonoBehaviour
         playerLocomotion = GetComponent<TPCPlayerLocomotion>();
         interactor = GetComponent<Interactor>();
         flashlight = GetComponent<Flashlight>();
+        pauser = FindFirstObjectByType<Pauser>();
+
+        if(pauser)
+        {
+            pauser.gameObject.SetActive(false);
+        }
     }
 
     private void OnEnable()
@@ -56,8 +64,7 @@ public class InputManager : MonoBehaviour
             TPCplayerControls.PlayerActions.Shift.performed += i => shiftInput = true;
             TPCplayerControls.PlayerActions.Shift.canceled += i => shiftInput = false;
 
-            TPCplayerControls.PlayerActions.Quit.performed += i => quitInput = true;
-            TPCplayerControls.PlayerActions.Quit.canceled += i => quitInput = false;
+            TPCplayerControls.PlayerActions.Quit.performed += _ => HandleQuitInput();
 
             TPCplayerControls.PlayerActions.Interact.performed += i => interactInput = true;
             TPCplayerControls.PlayerActions.Interact.canceled += i => interactInput = false;
@@ -85,7 +92,6 @@ public class InputManager : MonoBehaviour
         HandleSprintInput();
         HandleInteractInput();
         HandleFlashlightInput();
-        HandleQuitInput();
     }
 
     private void HandleMovementInput()
@@ -164,9 +170,27 @@ public class InputManager : MonoBehaviour
 
     private void HandleQuitInput()
     {
-        if(quitInput)
+        if(!pauser)
         {
-            Application.Quit();
+            return;
+        }
+
+        if (!currentlyPaused)
+        {
+            pauser.ShowPauseMenu();
+            currentlyPaused = true;
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
+        else
+        {
+            pauser.HidePauseMenu();
+            currentlyPaused = false;
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }
