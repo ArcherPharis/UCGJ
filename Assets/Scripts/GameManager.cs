@@ -24,14 +24,57 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxIntensity = 5f;
 
     public AudioSource audioSource;
+    DialogueUI dialogueUI;
+
+    [SerializeField] DialogueObject IntroDialogue;
+    [SerializeField] DialogueObject PlayerHesitates;
+    [SerializeField] DialogueObject PlayerEndlessWall;
+    [SerializeField] DialogueObject LightDIAL;
+
+
+    private Vector3 initialPlayerPosition;
+
 
     private void Awake()
     {
         playerInput = FindFirstObjectByType<InputManager>();
         audioSource = GetComponent<AudioSource>();
         QualitySettings.SetQualityLevel(0);
+        dialogueUI = FindFirstObjectByType<DialogueUI>();
     }
 
+    private void Start()
+    {
+        dialogueUI.ShowDialogue(IntroDialogue);
+
+        initialPlayerPosition = player.position;
+        StartCoroutine(CheckPlayerMovement());
+    }
+
+    private IEnumerator CheckPlayerMovement()
+    {
+        yield return new WaitForSeconds(5.5f);
+
+        if (Vector3.Distance(initialPlayerPosition, player.position) < 1f)
+        {
+            PlayHesitateDialogue();
+        }
+    }
+
+    private void PlayHesitateDialogue()
+    {
+        dialogueUI.ShowDialogue(PlayerHesitates);
+    }
+
+    public void PlayEndlessWall()
+    {
+        dialogueUI.ShowDialogue(PlayerEndlessWall);
+    }
+
+    public void PlayLight()
+    {
+        dialogueUI.ShowDialogue(LightDIAL);
+    }
     private void HandleDoorRevealLogic()
     {
         float playerDistance = Vector3.Distance(player.position, door.transform.position);

@@ -111,7 +111,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb29589c9636dbd46b9103c8ed4b03a7, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: cb29589c9636dbd46b9103c8ed4b03a7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelIndexToLoad: 2
+  DialogueToSay: {fileID: 11400000, guid: b60b606a8c92ede4a85e317a3d721927, type: 2}
 --- !u!1 &6162647169997159421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3926228386534164253, guid: 7043c2663f7cbf141bfc7135b355a70f, type: 3}
@@ -278,3 +279,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelIndexToLoad: 2
+  DialogueToSay: {fileID: 11400000, guid: b60b606a8c92ede4a85e317a3d721927, type: 2}

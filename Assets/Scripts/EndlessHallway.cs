@@ -21,6 +21,8 @@ public class EndlessHallway : MonoBehaviour
         {
             other.gameObject.transform.position = PlayerRestartPoint.position;
             other.gameObject.transform.rotation = PlayerRestartPoint.rotation;
+            GameManager GM = FindFirstObjectByType<GameManager>();
+            GM.PlayEndlessWall();
         }
     }
 
