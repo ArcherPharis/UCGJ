@@ -18,6 +18,7 @@ public class PlayButton : MonoBehaviour
     [SerializeField] Button QuitButton;
     [SerializeField] Button CreditsButton;
     [SerializeField] GameObject BackButton;
+    [SerializeField] GameObject TitleLogo;
 
     public Image image1; 
     public Image image2;
@@ -217,6 +218,8 @@ public class PlayButton : MonoBehaviour
         PlayButt.gameObject.SetActive(false);
         QuitButton.gameObject.SetActive(false);
         CreditsButton.gameObject.SetActive(false);
+        TitleLogo.SetActive(false);
+
     }
 
     void ShowUI()
@@ -224,6 +227,7 @@ public class PlayButton : MonoBehaviour
         PlayButt.gameObject.SetActive(true);
         QuitButton.gameObject.SetActive(true);
         CreditsButton.gameObject.SetActive(true);
+        TitleLogo.SetActive(true);
     }
 }
 
