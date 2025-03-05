@@ -1817,9 +1817,10 @@ MonoBehaviour:
 
     Hold Shift to run.
 
-
     Press E
-    to interact.'
+    to interact.
+
+    Mouse - Move Camera'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 450ecc334bd5ad94b8ea8da0834d703d, type: 2}
